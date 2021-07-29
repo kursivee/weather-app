@@ -21,7 +21,7 @@ class CurrentForecastViewModel @Inject constructor(
     private val _state = MutableLiveData<CurrentForecastEntity>()
     val state: LiveData<CurrentForecastEntity> = _state
 
-    private fun getCurrentForecast(zipCode: String) {
+    fun getCurrentForecast(zipCode: String) {
         viewModelScope.launch {
             getCurrentForecastUseCase(zipCode).map { currentForecastEntity ->
                 _state.value = currentForecastEntity

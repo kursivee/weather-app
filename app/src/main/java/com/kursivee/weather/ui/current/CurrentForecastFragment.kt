@@ -1,9 +1,14 @@
 package com.kursivee.weather.ui.current
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.MenuItemCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -23,6 +28,7 @@ class CurrentForecastFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = CurrentForecastFragmentBinding.inflate(layoutInflater)
         viewModel.state.observe(viewLifecycleOwner) { currentForecastEntity ->
             with(binding) {
                 tvDegree.isVisible = true
@@ -42,7 +48,23 @@ class CurrentForecastFragment : Fragment() {
                 )
             }
         }
-        _binding = CurrentForecastFragmentBinding.inflate(layoutInflater)
+        with(binding.toolbar.menu.findItem(R.id.search).actionView as SearchView) {
+            maxWidth = Int.MAX_VALUE
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(p0: String?): Boolean {
+                    if(!p0.isNullOrBlank()) {
+                        viewModel.getCurrentForecast(p0)
+                    }
+                    return true
+                }
+
+                override fun onQueryTextChange(p0: String?): Boolean {
+                    return true
+                }
+
+            })
+            isIconified = false
+        }git a
         return binding.root
     }
 
