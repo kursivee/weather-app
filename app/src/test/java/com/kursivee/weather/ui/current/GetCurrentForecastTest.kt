@@ -1,17 +1,13 @@
 package com.kursivee.weather.ui.current
 
-import arrow.core.orNull
-import arrow.core.right
 import com.kursivee.weather.entity.CurrentForecastEntity
-import com.kursivee.weather.network.WeatherApi
 import com.kursivee.weather.network.WeatherRepository
 import com.kursivee.weather.util.createWeatherApi
 import com.kursivee.weather.util.enqueueResponse
 import kotlinx.coroutines.runBlocking
-import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -19,7 +15,6 @@ class GetCurrentForecastTest {
 
     private lateinit var sut: GetCurrentForecast
     private val server = MockWebServer()
-
 
     @Before
     fun setup() {
