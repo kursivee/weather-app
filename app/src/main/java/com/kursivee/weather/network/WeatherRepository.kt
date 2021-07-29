@@ -5,6 +5,7 @@ import com.kursivee.weather.entity.CurrentForecastEntity
 import com.kursivee.weather.util.AppResult
 
 class WeatherRepository constructor(private val weatherApi: WeatherApi) {
+
     suspend fun getForecast(zipCode: String): AppResult<CurrentForecastEntity> {
         val response = weatherApi.getForecast(zipCode)
         return if (response.isSuccessful) {

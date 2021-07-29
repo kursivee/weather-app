@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.kursivee.weather.ui.current.CurrentWeatherFragment"
+        android:name="com.kursivee.weather.ui.current.CurrentForecastFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/current_forecast_fragment" />
 </navigation>

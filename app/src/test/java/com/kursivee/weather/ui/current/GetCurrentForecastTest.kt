@@ -32,11 +32,12 @@ class GetCurrentForecastTest {
         runBlocking {
             val response = sut("12345")
             val expected = CurrentForecastEntity(
-                currentFahrenheit = 73.4,
-                maxFahrenheit = 95.4,
-                minFahrenheit = 75.0,
+                currentFahrenheit = 73,
+                maxFahrenheit = 95,
+                minFahrenheit = 75,
                 time = 1627520632,
-                location = "Name, Region"
+                location = "Name, Region",
+                feelsLikeFahrenheit = 76
             )
             assertEquals(expected, response.orNull())
         }

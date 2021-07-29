@@ -5,14 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.current.CurrentWeatherFragment">
+    tools:context=".ui.current.CurrentForecastFragment">
 
     <TextView
         android:id="@+id/tv_date"
         style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="July 22, 1:14PM"
         android:layout_marginTop="@dimen/top_spacing"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginEnd="@dimen/margin_start_end"
@@ -27,7 +26,6 @@
         android:layout_marginTop="@dimen/top_spacing"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginEnd="@dimen/margin_start_end"
-        android:text="Day 88 * Night 72"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
@@ -36,10 +34,9 @@
         style="@style/TextAppearance.MaterialComponents.Headline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_spacing"
+        android:layout_marginTop="@dimen/top_spacing_m"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginEnd="@dimen/margin_start_end"
-        android:text="76 F"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_high_low" />
 
@@ -48,11 +45,21 @@
         style="@style/TextAppearance.MaterialComponents.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_spacing"
+        android:layout_marginTop="@dimen/top_spacing_m"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginEnd="@dimen/margin_start_end"
-        android:text="Feels like 76 F"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
+
+    <TextView
+        android:id="@+id/tv_degree"
+        style="@style/TextAppearance.MaterialComponents.Headline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/degree"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/tv_temperature"
+        app:layout_constraintTop_toBottomOf="@+id/tv_high_low" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

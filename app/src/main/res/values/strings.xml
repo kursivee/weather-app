@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="temp">%1$s</string>
+    <string name="degree">\u2109</string>
+    <string name="max_min_temp">High %1$s\u00B0 \u2022 Low %2$s\u00B0</string>
+    <string name="feels_like_temp">Feels like %1$s\u00B0</string>
 </resources>
